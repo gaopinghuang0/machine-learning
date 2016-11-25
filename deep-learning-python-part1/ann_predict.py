@@ -28,4 +28,5 @@ predictions = np.argmax(P_Y_given_X, axis=1)
 def classification_rate(Y, P):
 	return np.mean(Y == P)
 
+print Y.shape
 print "Score: ", classification_rate(Y, predictions)
