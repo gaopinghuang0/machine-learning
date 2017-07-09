@@ -36,14 +36,14 @@ def derivative_w2(Z, T, Y):
     # ret2 = np.zeros((M, K))
     # for n in xrange(N):
     #     for k in xrange(K):
-    #         ret2[:,k] += (T[n,k]* - Y[n,k])*Z[n,:]
+    #         ret2[:,k] += (T[n,k] - Y[n,k])*Z[n,:]
 
     # assert(np.abs(ret1 - ret2).sum() < 0.00001)
 
     # # even faster  - let's not loop over k either
     # ret3 = np.zeros((M, K))
     # for n in xrange(N): # slow way first
-    #     ret3 += np.outer( Z[n], T[n] - Y[n] )
+    #     ret3 += np.outer(Z[n], T[n] - Y[n])
 
     # assert(np.abs(ret1 - ret3).sum() < 0.00001)
     # fastest - let's not loop over anything

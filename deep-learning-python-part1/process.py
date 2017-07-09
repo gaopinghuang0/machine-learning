@@ -1,5 +1,7 @@
 '''
 Process ecommerce_data.csv
+
+Add some comments based on original scripts
 '''
 import numpy as np
 import pandas as pd
@@ -41,3 +43,5 @@ def get_binary_data():
 	X2 = X[Y <= 1]
 	Y2 = Y[Y <= 1]
 	return X2, Y2
+
+
