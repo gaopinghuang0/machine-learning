@@ -25,7 +25,7 @@ def get_data():
 
 	# one-hot categorical columns
 	# convert time_of_day column into 4 columns (4 periods)
-	for n in xrange(N):
+	for n in range(N):
 		t = int(X[n, D-1])
 		X2[n, t+D-1] = 1
 
