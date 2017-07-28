@@ -1,3 +1,12 @@
+# my own ignore files
+
+.DS_Store
+machine_learning_examples/
+facial-expression-recognition/
+
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -60,6 +69,3 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
-
-.DS_Store
-machine_learning_examples/

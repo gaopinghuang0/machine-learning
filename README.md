@@ -4,6 +4,10 @@ Learning machine learning.
 ## Sources
 1. Code on Github: [lazyprogrammer/machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples/)
 2. Deep-learning-python-part1: [data-science-deep-learning-in-python](https://www.udemy.com/data-science-deep-learning-in-python/)
+3. Facial-expression-recognition:
+	1. Code on Github: [lazyprogrammer/facial-expression-recognition](https://github.com/lazyprogrammer/facial-expression-recognition)
+	2. Dataset: [Kaggle facial expression](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge)
+
 
 ## Notes:
 Under `deep-learning-python-part1/`
