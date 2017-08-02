@@ -15,11 +15,9 @@ Under `deep-learning-python-part1/`
 
 Learn how to rewrite slow for-loop into fast matrix form. Also, we can learn how to update W2, b2, W1, b1 using backpropagation.
 
-
 2. For `backprop.py` and `ann_train.py`
 
 Learn how to rewrite `softmax`, `forward`, `predict`, `classification_rate`, and `cross_entropy` into compact matrix form.
-
 
 3. For `logistic_softmax_train.py` and `ann_train.py`
 
