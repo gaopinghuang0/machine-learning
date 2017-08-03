@@ -1,8 +1,9 @@
-# my own ignore files
 
+# my own files to ignore
 .DS_Store
 machine_learning_examples/
 facial-expression-recognition/
+large_files/*
 
 
 
