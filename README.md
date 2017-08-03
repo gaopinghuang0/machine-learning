@@ -8,7 +8,24 @@ Learning machine learning.
 	1. Code on Github: [lazyprogrammer/facial-expression-recognition](https://github.com/lazyprogrammer/facial-expression-recognition)
 	2. Dataset: [Kaggle facial expression](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge)
 4. Deep-learning-python-part2: [deep-learning-in-theano-tensorflow](https://www.udemy.com/data-science-deep-learning-in-theano-tensorflow/)
-  1. Dataset: [Kaggle digit recognizer](https://www.kaggle.com/c/digit-recognizer)
+	1. Dataset: [Kaggle digit recognizer](https://www.kaggle.com/c/digit-recognizer)
+
+## Run
+```bash
+# if virtualenv or python3 is installed
+python3 -m venv env   # where env is a conventional folder name to store all the scripts and dependencies
+# or 
+virtualenv env
+
+# activate
+source env/bin/activate   # in my .bashrc, alias to `workon`
+
+# install using pip3, which comes with virtualenv
+pip3 install -r requirements.txt   # which comes from  pip freeze > requirements.txt
+
+# exec any python script
+python3 script.py
+```
 
 
 
