@@ -3,7 +3,7 @@
 .DS_Store
 machine_learning_examples/
 facial-expression-recognition/
-large_files/*
+large_files/
 
 
 

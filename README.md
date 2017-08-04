@@ -1,5 +1,5 @@
-# machine-learning
-Learning machine learning.
+# machine learning and deep learning
+Learn machine-learning and deep-learning.
 
 ## Sources
 1. Code on Github: [lazyprogrammer/machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples/)
