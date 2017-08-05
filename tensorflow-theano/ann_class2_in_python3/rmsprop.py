@@ -28,7 +28,7 @@ def main():
 
     N, D = Xtrain.shape
     batch_sz = 500
-    n_batches = N / batch_sz
+    n_batches = N // batch_sz
 
     M = 300
     K = 10
@@ -41,8 +41,8 @@ def main():
     # cost = -16
     LL_batch = []
     CR_batch = []
-    for i in xrange(max_iter):
-        for j in xrange(n_batches):
+    for i in range(max_iter):
+        for j in range(n_batches):
             Xbatch = Xtrain[j*batch_sz:(j*batch_sz + batch_sz),]
             Ybatch = Ytrain_ind[j*batch_sz:(j*batch_sz + batch_sz),]
             pYbatch, Z = forward(Xbatch, W1, b1, W2, b2)
@@ -60,14 +60,14 @@ def main():
                 # print "pY:", pY
                 ll = cost(pY, Ytest_ind)
                 LL_batch.append(ll)
-                print "Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll)
+                print("Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll))
 
                 err = error_rate(pY, Ytest)
                 CR_batch.append(err)
-                print "Error rate:", err
+                print("Error rate:", err)
 
     pY, _ = forward(Xtest, W1, b1, W2, b2)
-    print "Final error rate:", error_rate(pY, Ytest)
+    print("Final error rate:", error_rate(pY, Ytest))
 
 
     # 2. RMSprop
@@ -84,8 +84,8 @@ def main():
     cache_b1 = 0
     decay_rate = 0.999
     eps = 0.0000000001
-    for i in xrange(max_iter):
-        for j in xrange(n_batches):
+    for i in range(max_iter):
+        for j in range(n_batches):
             Xbatch = Xtrain[j*batch_sz:(j*batch_sz + batch_sz),]
             Ybatch = Ytrain_ind[j*batch_sz:(j*batch_sz + batch_sz),]
             pYbatch, Z = forward(Xbatch, W1, b1, W2, b2)
@@ -114,14 +114,14 @@ def main():
                 # print "pY:", pY
                 ll = cost(pY, Ytest_ind)
                 LL_rms.append(ll)
-                print "Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll)
+                print("Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll))
 
                 err = error_rate(pY, Ytest)
                 CR_rms.append(err)
-                print "Error rate:", err
+                print("Error rate:", err)
 
     pY, _ = forward(Xtest, W1, b1, W2, b2)
-    print "Final error rate:", error_rate(pY, Ytest)
+    print("Final error rate:", error_rate(pY, Ytest))
 
     plt.plot(LL_batch, label='const')
     plt.plot(LL_rms, label='rms')

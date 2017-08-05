@@ -83,7 +83,7 @@ def main():
     pY, _ = forward(Xtest, W1, b1, W2, b2)
     print("Final error rate:", error_rate(pY, Ytest))
     end = time.time()
-    print('Exec time:', end-start)
+    print('Ellapsed time:', end-start)
 
     # 2. batch with momentum
     start = time.time()
@@ -129,7 +129,7 @@ def main():
     pY, _ = forward(Xtest, W1, b1, W2, b2)
     print("Final error rate:", error_rate(pY, Ytest))
     end = time.time()
-    print('Exec time:', end-start)
+    print('Ellapsed time:', end-start)
 
 
     # 3. batch with Nesterov momentum
@@ -198,7 +198,7 @@ def main():
     pY, _ = forward(Xtest, W1, b1, W2, b2)
     print("Final error rate:", error_rate(pY, Ytest))
     end = time.time()
-    print('Exec time:', end-start)
+    print('Ellapsed time:', end-start)
 
 
     plt.plot(LL_batch, label="batch")
