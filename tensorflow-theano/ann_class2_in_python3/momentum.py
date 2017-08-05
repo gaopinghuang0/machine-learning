@@ -7,6 +7,8 @@
 # NOTE: sigmoid vs. rectifier for hiddens
 # We get 15% error rate with sigmoid, 3% error rate with ReLU
 
+import time
+
 import numpy as np
 from sklearn.utils import shuffle
 import matplotlib.pyplot as plt
@@ -37,7 +39,7 @@ def main():
 
     N, D = Xtrain.shape
     batch_sz = 500
-    n_batches = N / batch_sz
+    n_batches = N // batch_sz
 
     M = 300
     K = 10
@@ -46,12 +48,15 @@ def main():
     W2 = np.random.randn(M, K) / np.sqrt(M)
     b2 = np.zeros(K)
 
+
     # 1. batch
     # cost = -16
+    start = time.time()
+
     LL_batch = []
     CR_batch = []
-    for i in xrange(max_iter):
-        for j in xrange(n_batches):
+    for i in range(max_iter):
+        for j in range(n_batches):
             Xbatch = Xtrain[j*batch_sz:(j*batch_sz + batch_sz),]
             Ybatch = Ytrain_ind[j*batch_sz:(j*batch_sz + batch_sz),]
             pYbatch, Z = forward(Xbatch, W1, b1, W2, b2)
@@ -69,16 +74,20 @@ def main():
                 # print "pY:", pY
                 ll = cost(pY, Ytest_ind)
                 LL_batch.append(ll)
-                print "Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll)
+                print("Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll))
 
                 err = error_rate(pY, Ytest)
                 CR_batch.append(err)
-                print "Error rate:", err
+                print("Error rate:", err)
 
     pY, _ = forward(Xtest, W1, b1, W2, b2)
-    print "Final error rate:", error_rate(pY, Ytest)
+    print("Final error rate:", error_rate(pY, Ytest))
+    end = time.time()
+    print('Exec time:', end-start)
 
     # 2. batch with momentum
+    start = time.time()
+
     W1 = np.random.randn(D, M) / 28
     b1 = np.zeros(M)
     W2 = np.random.randn(M, K) / np.sqrt(M)
@@ -90,8 +99,8 @@ def main():
     db2 = 0
     dW1 = 0
     db1 = 0
-    for i in xrange(max_iter):
-        for j in xrange(n_batches):
+    for i in range(max_iter):
+        for j in range(n_batches):
             Xbatch = Xtrain[j*batch_sz:(j*batch_sz + batch_sz),]
             Ybatch = Ytrain_ind[j*batch_sz:(j*batch_sz + batch_sz),]
             pYbatch, Z = forward(Xbatch, W1, b1, W2, b2)
@@ -112,16 +121,20 @@ def main():
                 # print "pY:", pY
                 ll = cost(pY, Ytest_ind)
                 LL_momentum.append(ll)
-                print "Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll)
+                print("Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll))
 
                 err = error_rate(pY, Ytest)
                 CR_momentum.append(err)
-                print "Error rate:", err
+                print("Error rate:", err)
     pY, _ = forward(Xtest, W1, b1, W2, b2)
-    print "Final error rate:", error_rate(pY, Ytest)
+    print("Final error rate:", error_rate(pY, Ytest))
+    end = time.time()
+    print('Exec time:', end-start)
 
 
     # 3. batch with Nesterov momentum
+    start = time.time()
+
     W1 = np.random.randn(D, M) / 28
     b1 = np.zeros(M)
     W2 = np.random.randn(M, K) / np.sqrt(M)
@@ -138,8 +151,8 @@ def main():
     vb2 = 0
     vW1 = 0
     vb1 = 0
-    for i in xrange(max_iter):
-        for j in xrange(n_batches):
+    for i in range(max_iter):
+        for j in range(n_batches):
             # because we want g(t) = grad(f(W(t-1) - lr*mu*dW(t-1)))
             # dW(t) = mu*dW(t-1) + g(t)
             # W(t) = W(t-1) - mu*dW(t)
@@ -177,14 +190,15 @@ def main():
                 # print "pY:", pY
                 ll = cost(pY, Ytest_ind)
                 LL_nest.append(ll)
-                print "Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll)
+                print("Cost at iteration i=%d, j=%d: %.6f" % (i, j, ll))
 
                 err = error_rate(pY, Ytest)
                 CR_nest.append(err)
-                print "Error rate:", err
+                print("Error rate:", err)
     pY, _ = forward(Xtest, W1, b1, W2, b2)
-    print "Final error rate:", error_rate(pY, Ytest)
-
+    print("Final error rate:", error_rate(pY, Ytest))
+    end = time.time()
+    print('Exec time:', end-start)
 
 
     plt.plot(LL_batch, label="batch")
