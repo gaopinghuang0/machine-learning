@@ -7,8 +7,9 @@ Learn machine-learning and deep-learning.
 3. Facial-expression-recognition:
 	1. Code on Github: [lazyprogrammer/facial-expression-recognition](https://github.com/lazyprogrammer/facial-expression-recognition)
 	2. Dataset: [Kaggle facial expression](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge)
-4. Deep-learning-python-part2: [deep-learning-in-theano-tensorflow](https://www.udemy.com/data-science-deep-learning-in-theano-tensorflow/)
+4. Deep-learning-python-part2: [theano-tensorflow](https://www.udemy.com/data-science-deep-learning-in-theano-tensorflow/)
 	1. Dataset: [Kaggle digit recognizer](https://www.kaggle.com/c/digit-recognizer)
+5. Deep-learning-python-part5: [Recurrent neural networks](https://www.udemy.com/deep-learning-recurrent-neural-networks-in-python)
 
 ## Run
 ```bash
